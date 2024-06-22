@@ -37,4 +37,20 @@ public class TriangleTests
         var area = triangle.GetArea();
         Assert.Equal(6.0, area);
     }
+
+    [Fact]
+    public void RigthAngleTest_ShouldReturnFalse()
+    {
+        var triangle = new Triangle(3.0, 4.0, 6.0);
+        var rightAngle = triangle.IsRightAngledTriangle();
+        Assert.False(rightAngle);
+    }
+
+    [Fact]
+    public void RigthAngleTest_ShouldReturnTrue()
+    {
+        var triangle = new Triangle(3.0, 4.0, 5.0);
+        var rightAngle = triangle.IsRightAngledTriangle();
+        Assert.True(rightAngle);
+    }
 }
